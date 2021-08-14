@@ -1,8 +1,6 @@
 package level1;
-import java.awt.*;
-import java.awt.event.*;
 import java.util.*;
-import javax.swing.*;
+
 public class t2_knightsMove {
 
     public static void chessMove(){
@@ -12,8 +10,7 @@ public class t2_knightsMove {
         else System.out.println( "Incorrect move of knight");
     }
     public static boolean isPossible(int x1, int y1, int x2, int y2) {
-        if (Math.abs(x1 - x2) == 1 && Math.abs(y1 - y2) == 2 || Math.abs(x1 - x2) == 2 && Math.abs(y1 - y2) == 1) return true;
-        return false;
+       return (Math.abs(x1 - x2) == 1 && Math.abs(y1 - y2) == 2 || Math.abs(x1 - x2) == 2 && Math.abs(y1 - y2) == 1) ;
     }
 
 
