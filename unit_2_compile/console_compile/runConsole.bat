@@ -1,0 +1,2 @@
+javac -sourcepath ./src -d build/classes -cp ./libs/commons-lang3-3.11.jar;./libs/json-simple-1.1.1.jar src/ua/Some.java src/MainConsole.java
+java -cp build/classes/;./libs/commons-lang3-3.11.jar;./libs/json-simple-1.1.1.jar MainConsole
