@@ -5,8 +5,8 @@ import static level3.LifeGame.startGame;
 import static level2.CorrectString.checkString;
 
 public class Tasks {
-    public static void main(String[] args){
 
+    public static void main(String[] args) {
         System.out.println("level1 tasks: ");
         inputValues();
         chessMove();
@@ -15,6 +15,5 @@ public class Tasks {
         checkString();
         System.out.println("level3 task: ");
         startGame();
-
     }
 }

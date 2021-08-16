@@ -1,6 +1,6 @@
 package ChessPieces;
 
-public enum TYPES {
+public enum Types {
     PAWN,
     KING,
     QUEEN,
