@@ -1,8 +1,10 @@
 package level2;
+
 import java.util.Scanner;
 import java.util.Stack;
 
 public class CorrectString {
+
     public static void checkString() {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter string to check:");
@@ -12,12 +14,11 @@ public class CorrectString {
         if (!string.contains("(") && !string.contains("[") && !string.contains("{")) isCorrect = true;
         else isCorrect = calculateBraces(string);
 
-        if (!isCorrect) System.out.println( "Incorrect string");
+        if (!isCorrect) System.out.println("Incorrect string");
         else System.out.println("Correct string (has no mismatch braces):");
     }
 
     private static boolean calculateBraces(String string) {
-
         boolean isCorrect = true;
         Stack<Character> brackets = new Stack<>();
         brackets.push(' ');
@@ -51,6 +52,6 @@ public class CorrectString {
 
         }
         brackets.pop();
-     return isCorrect;
-}
+        return isCorrect;
+    }
 }

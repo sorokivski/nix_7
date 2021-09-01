@@ -1,6 +1,6 @@
 package ChessPieces;
 
-public enum STATUSES {
+public enum Statuses {
     ONBOARD,
     TAKES,
     REACHED
