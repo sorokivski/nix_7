@@ -1,8 +1,8 @@
 package controller;
 
 import tasks.CommisVoyageur;
-import tasks.convertDate;
-import tasks.uniqName;
+import tasks.СonvertDate;
+import tasks.UniqName;
 
 import java.util.Scanner;
 
@@ -21,10 +21,10 @@ public class ModuleController {
             }
             switch (choice) {
                 case 1:
-                    new convertDate().run();
+                    new СonvertDate().run();
                     break;
                 case 2:
-                    new uniqName().findFirstUniq();
+                    new UniqName().findFirstUniq();
                     break;
                 case 3:
                     new CommisVoyageur().lessCost();
@@ -32,8 +32,8 @@ public class ModuleController {
                 case 0:
                     break;
                 default:
-                    new convertDate().run();
-                    new uniqName().findFirstUniq();
+                    new СonvertDate().run();
+                    new UniqName().findFirstUniq();
                     new CommisVoyageur().lessCost();
 
             }

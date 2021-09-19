@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 временная сложность - O(n) при условии, что доступ к элементу
 списка по индексу - O(1).
  */
-public class uniqName {
+public class UniqName {
 
     private static final String INPUT_FILE = "resources/names.txt";
 
