@@ -1,6 +1,4 @@
 package utils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -8,7 +6,7 @@ import java.util.Arrays;
 
 public class MathSet<Numbers extends Number & Comparable<Numbers>> {
     private final int SIZE = 10;
-    private int capacity=0;
+    private int capacity = 0;
     private Numbers[] numbers;
 
     public MathSet() {
@@ -16,7 +14,7 @@ public class MathSet<Numbers extends Number & Comparable<Numbers>> {
     }
 
     public MathSet(int capacity) {
-    this.capacity=capacity;
+        this.capacity = capacity;
         numbers = (Numbers[]) new Number[capacity];
     }
 
@@ -28,7 +26,7 @@ public class MathSet<Numbers extends Number & Comparable<Numbers>> {
     }
 
     public MathSet(Number[]... numbers) {
-        for (Number[]  n : numbers) {
+        for (Number[] n : numbers) {
             for (Number number : n) {
                 this.add(number);
             }
@@ -38,13 +36,13 @@ public class MathSet<Numbers extends Number & Comparable<Numbers>> {
     public MathSet(MathSet nums) {
         numbers = (Numbers[]) new Number[nums.capacity];
         for (int i = 0; i < nums.capacity; i++) {
-            add((Numbers) numbers[i]);
+            add(numbers[i]);
         }
     }
 
     public MathSet(MathSet... nums) {
-        for(MathSet n: nums){
-            for(int i=0;i< n.capacity;i++){
+        for (MathSet n : nums) {
+            for (int i = 0; i < n.capacity; i++) {
                 add(n.get(i));
             }
         }
@@ -54,7 +52,7 @@ public class MathSet<Numbers extends Number & Comparable<Numbers>> {
         if (!containsDuplicate(n)) {
             if (numbers.length == capacity) {
                 int newLength = numbers.length + (numbers.length + 1);
-                Numbers[] newNumbers = (Numbers[])  new Number[newLength];
+                Numbers[] newNumbers = (Numbers[]) new Number[newLength];
                 int index = 0;
                 for (int i = 0; i < numbers.length; i++) {
                     if (numbers[i] != null) {
@@ -95,8 +93,8 @@ public class MathSet<Numbers extends Number & Comparable<Numbers>> {
     }
 
     public void intersection(MathSet ms) {
-        for(int i=0;i<capacity;i++){
-            Numbers[]copied= (Numbers[]) new Number[capacity];
+        for (int i = 0; i < capacity; i++) {
+            Numbers[] copied = (Numbers[]) new Number[capacity];
             System.arraycopy(this.numbers, 0, copied, 0, capacity);
             clear();
             for (Numbers n : copied) {
@@ -139,7 +137,7 @@ public class MathSet<Numbers extends Number & Comparable<Numbers>> {
     }
 
     public void sortDesc(Number value) {
-sortDesc(value.intValue(),capacity);
+        sortDesc(value.intValue(), capacity);
     }
 
     public void sortAsc() {
@@ -171,10 +169,10 @@ sortDesc(value.intValue(),capacity);
     }
 
     public Number getMax() {
-        Numbers max=get(0);
-        for(int i=1;i<capacity;i++){
-            if(numbers[i].compareTo(max) > 0){
-                max=numbers[i];
+        Numbers max = get(0);
+        for (int i = 1; i < capacity; i++) {
+            if (numbers[i].compareTo(max) > 0) {
+                max = numbers[i];
             }
         }
         return max;
@@ -189,16 +187,16 @@ sortDesc(value.intValue(),capacity);
     }
 
     public double getAverage() {
-        BigDecimal sum=BigDecimal.valueOf(numbers[0].doubleValue());
-        for (int i=1;i<capacity;i++){
-            sum=sum.add(BigDecimal.valueOf(numbers[i].doubleValue()));
+        BigDecimal sum = BigDecimal.valueOf(numbers[0].doubleValue());
+        for (int i = 1; i < capacity; i++) {
+            sum = sum.add(BigDecimal.valueOf(numbers[i].doubleValue()));
         }
-        sum=sum.divide(BigDecimal.valueOf(capacity));
+        sum = sum.divide(BigDecimal.valueOf(capacity));
         return sum.doubleValue();
     }
 
     public Number getMedian() {
-        return get(capacity/2);
+        return get(capacity / 2);
     }
 
     public Number[] toArray() {
@@ -207,9 +205,9 @@ sortDesc(value.intValue(),capacity);
 
     public Number[] toArray(int firstIndex, int lastIndex) {
         if (!(firstIndex < 0 || firstIndex > capacity) &&
-            !(lastIndex < 0 || lastIndex > capacity)  &&
-            !(firstIndex > lastIndex)) {
-            return (Number[]) Arrays.copyOfRange(numbers, firstIndex, lastIndex + 1);
+                !(lastIndex < 0 || lastIndex > capacity) &&
+                !(firstIndex > lastIndex)) {
+            return Arrays.copyOfRange(numbers, firstIndex, lastIndex + 1);
         } else {
             throw new IndexOutOfBoundsException();
         }
@@ -230,18 +228,21 @@ sortDesc(value.intValue(),capacity);
         capacity = 0;
     }
 
-    public int getCapacity(){ return capacity;}
-   public void clear(Number[] nums) {
-       for (Number number : nums) {
-           for (int i = 0; i < capacity; i++) {
-               if (number.equals(numbers[i])) {
-                   for (int j = i; j < capacity; j++) {
-                       numbers[j] = numbers[j + 1];
-                       numbers[j + 1] = null;
-                   }
-                   capacity--;
-               }
-           }
-       }
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void clear(Number[] nums) {
+        for (Number number : nums) {
+            for (int i = 0; i < capacity; i++) {
+                if (number.equals(numbers[i])) {
+                    for (int j = i; j < capacity; j++) {
+                        numbers[j] = numbers[j + 1];
+                        numbers[j + 1] = null;
+                    }
+                    capacity--;
+                }
+            }
+        }
     }
 }

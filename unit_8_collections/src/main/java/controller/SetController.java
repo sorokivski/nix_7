@@ -11,7 +11,7 @@ public class SetController {
     public void run() {
         int choice = 11;
         while (choice != 0) {
-           options();
+            options();
             try {
                 if (in.hasNextInt()) choice = in.nextInt();
                 else choice = 11;
@@ -26,37 +26,41 @@ public class SetController {
                 case 1:
                     add();
                     break;
-                case 3:{
-                    if(numbers.get(0)== null) add();
+                case 3: {
+                    if (numbers.get(0) == null) add();
                     sortDescAndDisplay();
                 }
-                    break;
-                case 2:{
-                    if(numbers.get(0)== null) add();
+                break;
+                case 2: {
+                    if (numbers.get(0) == null) add();
                     sortAscAndDisplay();
-                } break;
+                }
+                break;
                 case 4: {
-                    if(numbers.get(0)== null) add();
+                    if (numbers.get(0) == null) add();
                     showMin();
                 }
                 break;
                 case 5: {
-                    if(numbers.get(0)== null) add();
+                    if (numbers.get(0) == null) add();
                     showMax();
                 }
                 break;
-                case 6:{
-                    if(numbers.get(0)== null) add();
+                case 6: {
+                    if (numbers.get(0) == null) add();
                     showAverage();
-                } break;
+                }
+                break;
                 case 7: {
-                    if(numbers.get(0)== null) add();
+                    if (numbers.get(0) == null) add();
                     showMedian();
-                } break;
+                }
+                break;
                 case 8: {
-                    if(numbers.get(0)== null) add();
+                    if (numbers.get(0) == null) add();
                     showAllValues();
-                } break;
+                }
+                break;
                 default:
                     break;
             }
@@ -73,19 +77,19 @@ public class SetController {
     }
 
     private void showMedian() {
-        System.out.println("MEDIAN: "+numbers.getMedian());
+        System.out.println("MEDIAN: " + numbers.getMedian());
     }
 
     private void showAverage() {
-        System.out.println("AVERAGE: "+numbers.getAverage());
+        System.out.println("AVERAGE: " + numbers.getAverage());
     }
 
     private void showMax() {
-        System.out.println("MAX: "+numbers.getMax());
+        System.out.println("MAX: " + numbers.getMax());
     }
 
     private void showMin() {
-        System.out.println("MIN: "+numbers.getMin());
+        System.out.println("MIN: " + numbers.getMin());
     }
 
     private void sortAscAndDisplay() {
@@ -100,9 +104,9 @@ public class SetController {
     private void sortDescAndDisplay() {
         numbers.sortDesc();
 
-            for (int i = 0; i < numbers.getCapacity(); i++) {
-                System.out.print(numbers.get(i) + " ");
-            }
+        for (int i = 0; i < numbers.getCapacity(); i++) {
+            System.out.print(numbers.get(i) + " ");
+        }
         System.out.println("\n");
     }
 
